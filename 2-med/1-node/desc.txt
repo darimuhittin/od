@@ -1,0 +1,20 @@
+Node Kurulumu: Terminali açıp node -v ve npm -v yazdırın.
+
+Basit Çalıştırma: Bir index.js oluşturun, içine console.log("Merhaba Node") yazın ve terminalde node index.js ile çalıştırın.
+
+Tepki: "Aaa, tarayıcı konsoluna gerek kalmadı, terminalde C kodu gibi çalıştı." diyecektir.
+
+
+
+
+Proje Başlatma: npm init -y ile package.json dosyasını oluşturun ve içeriğini gösterin.
+
+
+
+
+
+Paket Yükleme: Örnek olarak npm install lodash deyin ve node_modules klasörünün oluştuğunu gösterin.
+
+
+
+

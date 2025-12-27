@@ -1,0 +1,43 @@
+
+TypeScript'e girmeden önce Node.js ve özellikle NPM (Node Package Manager) mantığını anlatmazsanız, TypeScript havada kalır. Çünkü TypeScript tarayıcıda doğrudan çalışmaz; onu derlemek (transpile etmek) için bir ortama (Node.js) ihtiyacımız var.
+
+Node.js'i bir "Backend Sunucusu" olarak değil, bir "Runtime" (Çalışma Ortamı) ve "Tooling" (Araç Seti) olarak tanıtın.
+
+Kesinlikle EVET. Çok haklısınız.
+
+TypeScript'e girmeden önce Node.js ve özellikle NPM (Node Package Manager) mantığını anlatmazsanız, TypeScript havada kalır. Çünkü TypeScript tarayıcıda doğrudan çalışmaz; onu derlemek (transpile etmek) için bir ortama (Node.js) ihtiyacımız var.
+
+Öğrencinizin C/C++ geçmişi olduğu için bu kısmı şu analojilerle anlatırsanız kafasında taşlar mükemmel yerine oturur:
+
+Akademisyene Node.js'i Nasıl Anlatmalısınız?
+Ona Node.js'i bir "Backend Sunucusu" olarak değil, bir "Runtime" (Çalışma Ortamı) ve "Tooling" (Araç Seti) olarak tanıtın.
+
+Şu sırayı izlemeniz çok verimli olur:
+
+1. Node.js Nedir? (Runtime Analojisi)
+C++: Kodu yazarız, gcc ile derleriz, işletim sistemi üzerinde .exe olarak çalışır.
+
+Eski JS: Sadece tarayıcının içinde çalışırdı.
+
+Node.js: Chrome'un V8 motorunu söküp bilgisayarın işletim sistemine monte ettiler. Artık JS, tarayıcı dışında, terminalde, sunucuda çalışabiliyor.
+
+Özet: "Node.js, JavaScript'in terminalden çalıştırılabilen halidir."
+
+
+2. NPM ve package.json (Linker Analojisi)
+Bu kısım TypeScript kurulumu için zorunlu.
+
+C++: Kütüphaneleri #include edersiniz, linker ayarlarıyla uğraşırsınız.
+
+Node.js: Bizde NPM var. Dünyadaki bütün JS kütüphaneleri burada.
+
+package.json: Projenin "MakeFile"ı veya "Manifesto"su gibidir. Hangi kütüphaneleri kullandığımızı burada tutarız.
+
+node_modules: İndirilen kütüphanelerin fiziksel dosyaları buradadır (DLL klasörü gibi).
+
+
+
+
+
+
+

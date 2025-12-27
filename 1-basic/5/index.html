@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: Prototype vs Class</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScript OOP: Evrim</h1>
+            <p class="subtitle">Prototype Zincirinden Modern Sınıflara</p>
+        </header>
+
+        <main class="comparison-grid">
+            <!-- ES5 -->
+            <div class="card es5">
+                <div class="card-header">
+                    <span class="badge">Eski Yol</span>
+                    <h2>ES5: Prototype</h2>
+                </div>
+                <div class="code-block">
+<pre><code>function Insan(ad) {
+    this.ad = ad;
+}
+
+Insan.prototype.konus = function() {
+    return this.ad + " konuşuyor...";
+};</code></pre>
+                </div>
+                <div class="action-area">
+                    <input type="text" id="es5-input" placeholder="İsim girin (örn: Ali)" value="Ali">
+                    <button class="btn btn-es5" onclick="createES5()">ES5 ile Oluştur</button>
+                </div>
+            </div>
+
+            <!-- ES6 -->
+            <div class="card es6">
+                <div class="card-header">
+                    <span class="badge new">Yeni Standart</span>
+                    <h2>ES6: Class</h2>
+                </div>
+                <div class="code-block">
+<pre><code>class Insan {
+    constructor(ad) {
+        this.ad = ad;
+    }
+
+    konus() {
+        return `${this.ad} konuşuyor...`;
+    }
+}</code></pre>
+                </div>
+                <div class="action-area">
+                    <input type="text" id="es6-input" placeholder="İsim girin (örn: Ayşe)" value="Ayşe">
+                    <button class="btn btn-es6" onclick="createES6()">ES6 Class ile Oluştur</button>
+                </div>
+            </div>
+        </main>
+
+        <section class="console-output" id="console-area">
+            <h3>&gt; Çıktı Konsolu</h3>
+            <!-- Logs will appear here -->
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 7: Template Literals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .box {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+        .old {
+            background-color: #ffe6e6;
+        }
+        .new {
+            background-color: #e6ffe6;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bölüm 7: Şablon Dizileri (Template Literals)</h1>
+        
+        <div class="box old">
+            <h2>Eski Yöntem (String Birleştirme)</h2>
+            <p>Kod: <code>"Merhaba " + isim + " nasılsın?"</code></p>
+            <p>Sonuç: <strong id="old-result"></strong></p>
+        </div>
+
+        <div class="box new">
+            <h2>Yeni Yöntem (ES6 Template Literals)</h2>
+            <p>Kod: <code>`Merhaba ${isim} nasılsın?`</code></p>
+            <p>Sonuç: <strong id="new-result"></strong></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

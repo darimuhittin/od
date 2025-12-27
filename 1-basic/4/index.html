@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Destructuring
+
+        const kullanici = { ad: "Zeynep", sehir: "İstanbul" }
+
+        const { ad, sehir } = kullanici
+        console.log( ad ) // Zeynep
+        console.log( sehir ) // Istanbul
+
+        // Default Parameters
+
+        function merhaba ( isim = "Dünya" ) {
+            console.log( "Merhaba " + isim )
+        }
+
+        merhaba() // Merhaba Dünya
+        merhaba( "Ahmet" ) // Merhaba Ahmet
+
+        // Classes
+
+        class Kisi {
+            constructor( ad, sehir ) {
+                this.ad = ad
+                this.sehir = sehir
+            }
+        }
+
+        const kisi = new Kisi( "Zeynep", "İstanbul" )
+        console.log( kisi.ad ) // Zeynep
+        console.log( kisi.sehir ) // Istanbul
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

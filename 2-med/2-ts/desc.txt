@@ -1,0 +1,64 @@
+npm install typescript --save-dev
+
+ tsc ayrı bir paket değil, typescript paketinin içinden çıkan komuttur.
+
+Akademisyen öğrencinize bunu anlatırken kullanabileceğiniz en net yapı şudur:
+
+1. typescript Paketi Nedir?
+C++ analojisi ile:
+
+typescript paketi: Bilgisayara GCC (GNU Compiler Collection) kurmak gibidir.
+
+tsc (TypeScript Compiler): Terminale yazdığımız gcc veya g++ komutudur.
+v? C++ bilen hocamız için şahane bir detaydır: "Hocam, bu derleyici sadece biz kod yazarken (Devel
+Yani npm install typescript dediğinizde, bilgisayara hem dili hem de o dili JavaScript'e çevirecek olan derleyiciyi (compiler) indirmiş olursunuz.
+
+2. Kurulum Nasıl Olmalı?
+Projeye (klasöre) şu komutla kurmalısınız:
+
+Bash
+
+npm install typescript --save-dev
+Neden --save-deopment) lazım. Müşterinin tarayıcısında kod çalışırken derleyiciye ihtiyacımız yok, orada saf JS çalışacak. O yüzden 'Geliştirici Bağımlılığı' olarak ekliyoruz."
+
+3. Çok Önemli Bir Tavsiye: ts-node
+Ders sırasında sürekli tsc yazıp JS dosyası oluşturmak, sonra node dosya.js diye onu çalıştırmak çok vakit kaybettirir ve sıkıcıdır.
+
+Hocaya pratik yaptırırken ts-node paketini de kurdurun.
+
+Nedir? TypeScript kodunu diske JS dosyası olarak yazmadan, doğrudan bellekte derleyip çalıştırır. (Python gibi hissettirir).
+
+Kurulum: npm install ts-node --save-dev
+
+Kullanım: npx ts-node index.ts
+
+
+
+
+
+
+
+
+
+{
+  "compilerOptions": {
+    /* 1. Proje Yapısı (File Layout) */
+    "rootDir": "./src",        // Kaynak kodlarımız (.ts) burada (C++'taki src klasörü)
+    "outDir": "./dist",        // Derlenen kodlar (.js) buraya gidecek (C++'taki bin/build klasörü)
+
+    /* 2. Dil ve Çıktı Ayarları */
+    "target": "es2020",        // Çıktı hangi JS versiyonu olsun? (Modern Node.js için ideal)
+    "module": "commonjs",      // Node.js'in standart modül sistemi (Başlangıç için en sorunsuzu)
+    "sourceMap": true,         // Debug yapabilmek için gerekli (C++'taki -g flag'i, debug symbols)
+
+    /* 3. Katı Kurallar (Type Checking) */
+    "strict": true,            // Olmazsa olmaz. (C++'taki -Wall -Werror gibi, tüm güvenlik önlemlerini açar)
+    "noImplicitAny": true,     // Tipi belli olmayan değişkenlere izin verme
+    
+    /* 4. Diğer */
+    "esModuleInterop": true,   // Farklı modül sistemlerinin uyumlu çalışması için gerekli
+    "skipLibCheck": true,      // Kütüphane dosyalarının tiplerini kontrol edip vakit kaybetme
+    "forceConsistentCasingInFileNames": true // Dosya isimlerinde büyük/küçük harf duyarlılığı
+  },
+  "include": ["src/**/*"]      // Sadece src içindekileri derle
+}

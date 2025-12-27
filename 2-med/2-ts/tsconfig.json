@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    /* 1. Proje Yapısı (File Layout) */
+    "rootDir": "./src",        // Kaynak kodlarımız (.ts) burada (C++'taki src klasörü)
+    "outDir": "./dist",        // Derlenen kodlar (.js) buraya gidecek (C++'taki bin/build klasörü)
+
+    /* 2. Dil ve Çıktı Ayarları */
+    "target": "es2020",        // Çıktı hangi JS versiyonu olsun? (Modern Node.js için ideal)
+    "module": "commonjs",      // Node.js'in standart modül sistemi (Başlangıç için en sorunsuzu)
+    "sourceMap": true,         // Debug yapabilmek için gerekli (C++'taki -g flag'i, debug symbols)
+
+    /* 3. Katı Kurallar (Type Checking) */
+    "strict": true,            // Olmazsa olmaz. (C++'taki -Wall -Werror gibi, tüm güvenlik önlemlerini açar)
+    "noImplicitAny": true,     // Tipi belli olmayan değişkenlere izin verme
+    
+    /* 4. Diğer */
+    "esModuleInterop": true,   // Farklı modül sistemlerinin uyumlu çalışması için gerekli
+    "skipLibCheck": true,      // Kütüphane dosyalarının tiplerini kontrol edip vakit kaybetme
+    "forceConsistentCasingInFileNames": true // Dosya isimlerinde büyük/küçük harf duyarlılığı
+  },
+  "include": ["src/**/*"]      // Sadece src içindekileri derle
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!--ES6 ECMAScript 2015 -  VAR  / LET - CONST -->
+
+    <h1>Scope Demo</h1>
+    <div id="output"></div>
+    <script>
+        const outputDiv = document.getElementById( 'output' )
+        const log = ( msg ) => {
+            console.log( msg )
+            outputDiv.innerHTML += `<p>${ msg }</p>`
+        }
+
+        log( "<h3>Global Scope</h3>" )
+        var globalVar = "I am var (global)"
+        let globalLet = "I am let (global)"
+        const globalConst = "I am const (global)"
+
+        log( globalVar )
+        log( globalLet )
+        log( globalConst )
+
+        function scopeTest () {
+            log( "<h3>Function Scope</h3>" )
+            var functionVar = "I am var (function)"
+            let functionLet = "I am let (function)"
+            const functionConst = "I am const (function)"
+
+            log( functionVar )
+            log( functionLet )
+            log( functionConst )
+
+            if ( true ) {
+                log( "<h3>Block Scope (inside if)</h3>" )
+                var blockVar = "I am var (block - leaked to function)"
+                let blockLet = "I am let (block)"
+                const blockConst = "I am const (block)"
+
+                log( blockVar )
+                log( blockLet )
+                log( blockConst )
+            }
+
+            log( "<h3>Back to Function Scope</h3>" )
+            log( "var is accessible here: " + blockVar )
+
+            try {
+                log( blockLet )
+            } catch ( e ) {
+                log( "Error accessing blockLet: " + e.message )
+            }
+
+            try {
+                log( blockConst )
+            } catch ( e ) {
+                log( "Error accessing blockConst: " + e.message )
+            }
+        }
+
+        scopeTest();
+    </script>
+</body>
+
+</html>

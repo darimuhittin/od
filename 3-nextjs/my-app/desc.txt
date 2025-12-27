@@ -1,0 +1,44 @@
+layout.tsx: Header ve Footer gibi her sayfada sabit kalan kısımların buraya yazıldığı (Eskiden PHP include header.php mantığı gibi).
+
+2. JSX: "HTML Gibi Ama JavaScript"
+
+
+En Kritik Konu: Server vs. Client Components
+Next.js ile direkt başlandığında en büyük avantaj Server Components mantığını varsayılan olarak öğrenmektir. Eski C/C++ veya Backend mantığına sahip biri bunu çok sevecektir.
+
+Server Component (Varsayılan): Kod sunucuda çalışır, HTML üretilir ve tarayıcıya gönderilir. console.log tarayıcıda değil, terminalde görünür. Veritabanına buradan direkt bağlanılabilir (Güvenlidir).
+
+Client Component ("use client"): Eğer butona tıklama (onClick), useState (durum yönetimi) veya useEffect gibi tarayıcı etkileşimi gerekiyorsa dosyanın en tepesine "use client" yazılmalıdır.
+
+Analoji:
+
+Server Component: PHP/ASP gibi çalışır (Static, güvenli, backend).
+
+Client Component: jQuery/Pure JS gibi çalışır (İnteraktif, tarayıcıda).
+
+
+
+
+
+
+
+
+Props (Veri Aktarımı) ve Komponentleşme
+Kod tekrarını önlemek için yapıyı parçalara ayırmayı anlatmalısınız.
+
+Ne Anlatılmalı:
+
+Bir butonu veya kartı ayrı bir dosya yapıp (components/Card.tsx), ana sayfada çağırmak.
+
+Props: Fonksiyon parametresi gibidir. Ana sayfadan karta veri göndermek için kullanılır.
+
+TypeScript: Burada TypeScript devreye girer. interface ile hangi verinin geleceğini tanımlamak, C++ geçmişi olan biri için çok rahatlatıcıdır (Tip güvenliği).
+
+
+JSON PLACEHOLDER
+
+
+useEffect
+useState
+
+await fetch
