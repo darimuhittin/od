@@ -3,13 +3,14 @@ import { DataSource } from "typeorm";
 import { User } from "./entities/User";
 
 const AppDataSource = new DataSource({
-  type: "sqlite",
-  database: "database.sqlite",
+  type: "postgres",
+  url: "postgresql://neondb_owner:npg_NJjhZDdAm6U9@ep-hidden-math-ad1pqdzp-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require",
   synchronize: true,
   logging: false,
   entities: [User],
   migrations: [],
   subscribers: [],
+  
 });
 
 const initializeDB = async () => {
