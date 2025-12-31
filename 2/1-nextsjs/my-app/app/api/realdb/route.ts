@@ -5,7 +5,7 @@ import { User } from '@/lib/entities/User';
 export async function GET() {
   try {
     const dataSource = await initializeDB();
-    const userRepository = dataSource.getRepository<User>("User");
+    const userRepository = dataSource.getRepository(User);
     const users = await userRepository.find();
     return NextResponse.json(users);
   } catch (error) {
@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   try {
     const dataSource = await initializeDB();
     const body = await request.json();
-    const userRepository = dataSource.getRepository<User>("User");
+    const userRepository =  dataSource.getRepository(User);
     
     const user = userRepository.create({
       firstName: body.firstName,
