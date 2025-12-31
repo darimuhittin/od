@@ -5,14 +5,14 @@ import { User } from '@/lib/entities/User';
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
     const dataSource = await initializeDB();
-    const userRepository = dataSource.getRepository(User);
+    const userRepository = dataSource.getRepository<User>("User");
     const user = await userRepository.findOneBy({ id: Number(id) });
     return NextResponse.json(user);
 }
 export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const dataSource = await initializeDB();
-    const userRepository = dataSource.getRepository(User);
+    const userRepository = dataSource.getRepository<User>("User");
     const {id} = await params;
     
     await userRepository.delete(Number(id));
@@ -28,7 +28,7 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
 export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
       const dataSource = await initializeDB();
-      const userRepository = dataSource.getRepository(User);
+      const userRepository = dataSource.getRepository<User>("User");
       const { id } = await params;
       const body = await request.json();
       const user = await userRepository.findOneBy({ id: Number(id) });
