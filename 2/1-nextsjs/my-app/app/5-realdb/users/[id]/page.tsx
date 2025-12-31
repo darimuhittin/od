@@ -1,9 +1,13 @@
-import api from "@/lib/api"
+import { getUserById } from "@/lib/services/user"
 const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = await params;
     console.log(id)
-    const response = await api.get(`/api/realdb/${id}`)
-    const user = response.data
+    const user = await getUserById(Number(id))
+
+    if (!user) {
+        return <div className="p-4">User not found</div>
+    }
+
     return (
         <div className="p-4">
             <h1 className="text-2xl font-bold">First Name: {user.firstName}</h1>

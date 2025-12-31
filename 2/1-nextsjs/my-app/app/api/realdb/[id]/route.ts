@@ -1,12 +1,11 @@
 import { NextResponse } from 'next/server';
 import { initializeDB } from '@/lib/db';
 import { User } from '@/lib/entities/User';
+import { getUserById } from '@/lib/services/user';
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
-    const dataSource = await initializeDB();
-    const userRepository = dataSource.getRepository(User);
-    const user = await userRepository.findOneBy({ id: Number(id) });
+    const user = await getUserById(Number(id));
     return NextResponse.json(user);
 }
 export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
