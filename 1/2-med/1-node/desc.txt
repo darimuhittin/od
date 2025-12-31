@@ -4,14 +4,7 @@ Basit Çalıştırma: Bir index.js oluşturun, içine console.log("Merhaba Node"
 
 Tepki: "Aaa, tarayıcı konsoluna gerek kalmadı, terminalde C kodu gibi çalıştı." diyecektir.
 
-
-
-
 Proje Başlatma: npm init -y ile package.json dosyasını oluşturun ve içeriğini gösterin.
-
-
-
-
 
 Paket Yükleme: Örnek olarak npm install lodash deyin ve node_modules klasörünün oluştuğunu gösterin.
 

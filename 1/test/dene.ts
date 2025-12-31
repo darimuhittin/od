@@ -1,6 +1,4 @@
 class Insan {
-
-    
     isim: string;
     yas: number;
     cinsiyet: string;

@@ -53,7 +53,6 @@ async function asyncAwaitIleGetir() {
         // await keyword'ü Promise çözülene kadar bu satırda bekler!
         // Kod sanki senkron (satır satır) çalışıyormuş gibi görünür.
         const veri = await veritabanindanOku();
-        
         console.log("Async/Await veri geldi");
         ekranaYaz(veri);
         
