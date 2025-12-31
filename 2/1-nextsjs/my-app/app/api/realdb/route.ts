@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import { initializeDB, dataSource } from '@/lib/db';
+import { initializeDB } from '@/lib/db';
 import { User } from '@/lib/entities/User';
 
 export async function GET() {
   try {
-    await initializeDB();
-    const userRepository = dataSource.getRepository(User);
+    const dataSource = await initializeDB();
+    const userRepository = dataSource.getRepository<User>("User");
     const users = await userRepository.find();
     return NextResponse.json(users);
   } catch (error) {
@@ -16,14 +16,15 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    await initializeDB();
+    const dataSource = await initializeDB();
     const body = await request.json();
-    const userRepository = dataSource.getRepository(User);
+    const userRepository = dataSource.getRepository<User>("User");
     
-    const user = new User();
-    user.firstName = body.firstName;
-    user.lastName = body.lastName;
-    user.email = body.email;
+    const user = userRepository.create({
+      firstName: body.firstName,
+      lastName: body.lastName,
+      email: body.email,
+    });
     
     await userRepository.save(user);
     
@@ -33,3 +34,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Failed to create user" }, { status: 500 });
   }
 }
+
+
+
+  

@@ -13,10 +13,10 @@ const AppDataSource = new DataSource({
 });
 
 const initializeDB = async () => {
-  if (!AppDataSource.isInitialized) {
-    await AppDataSource.initialize();
+  if (!dataSource.isInitialized) {
+    await dataSource.initialize();
   }
-  return AppDataSource;
+  return dataSource;
 };
 
 // Handle Next.js hot reloading to prevent multiple connections
@@ -35,4 +35,4 @@ if (process.env.NODE_ENV === 'production') {
   dataSource = global.dataSource;
 }
 
-export { dataSource, initializeDB };
+export {  initializeDB };
