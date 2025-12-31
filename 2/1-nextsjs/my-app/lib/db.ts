@@ -5,10 +5,10 @@ import { User } from "./entities/User";
 const AppDataSource = new DataSource({
   type: "postgres",
   url: "postgresql://neondb_owner:npg_NJjhZDdAm6U9@ep-hidden-math-ad1pqdzp-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require",
-  
+
   ssl: true,
   synchronize: true,
-  dropSchema: false,
+  dropSchema: true,
   logging: true,
   entities: [User],
   migrations: [],
