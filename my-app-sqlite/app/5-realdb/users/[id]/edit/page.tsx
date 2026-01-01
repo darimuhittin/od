@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import api from '@/lib/api'
+import axios from 'axios'
 import { useRouter } from 'next/navigation'
 const EditUserPage = () => {
     const router = useRouter()
@@ -15,7 +15,7 @@ const EditUserPage = () => {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const response = await api.get(`/api/realdb/${id}`)
+            const response = await axios.get(`/api/realdb/${id}`)
             setUser(response.data)
         }
         fetchUser()
@@ -23,8 +23,8 @@ const EditUserPage = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        await api.put(`/api/realdb/${id}`, user)
-        const newUser = await api.get(`/api/realdb/${id}`)
+        await axios.put(`/api/realdb/${id}`, user)
+        const newUser = await axios.get(`/api/realdb/${id}`)
         setUser(newUser.data)
         // navigate to users page
         router.push('/5-realdb')
