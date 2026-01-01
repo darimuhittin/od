@@ -32,13 +32,13 @@ const UserCard: React.FC<Props> = ({ user, onDelete }) => {
             >
                 Delete User
             </button>
-            <Link href={`/5-realdb/users/${user.id}`}>
+            <Link href={`4/users/${user.id}`}>
                 <div className='bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-xs'>
                     View User
                 </div>
             </Link>
             {/* edit user */}
-            <Link href={`/5-realdb/users/${user.id}/edit`}>
+            <Link href={`4/users/${user.id}/edit`}>
                 <div className='bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-xs'>
                     Edit User
                 </div>
