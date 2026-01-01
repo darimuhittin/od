@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server';
-import { initializeDB } from '@/lib/db';
-import { User } from '@/lib/entities/User';
 import { getAllUsers, createUser } from '@/lib/services/user';
 
 export async function GET() {
