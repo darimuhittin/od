@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     const { email, password } = await request.json();
 
     // Mock validation
-      
+
     const user = await prisma.user.findUnique({ where: { email } });
     if (user) {
       if (!user.password || !password) {
@@ -20,17 +20,16 @@ export async function POST(request: Request) {
       if (!isPasswordValid) {
         return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
       }
-      const token = sign({ id: user.id }, SECRET_KEY, { expiresIn: '1h' });
+      const token = sign({ user }, SECRET_KEY, { expiresIn: '1h' });
 
       (await cookies()).set('token', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
+        maxAge: 3600,
         path: '/',
-        maxAge: 3600 // 1 hour
       });
 
-      return NextResponse.json({ user });
+      return NextResponse.json({ user, token });
     }
 
     return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });

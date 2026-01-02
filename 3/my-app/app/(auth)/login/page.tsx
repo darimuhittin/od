@@ -2,6 +2,7 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuthStore } from '@/app/store/auth'
+import Link from 'next/link';
 
 const Login = () => {
     const [email, setEmail] = React.useState('')
@@ -27,6 +28,7 @@ const Login = () => {
                     <input className="border p-2 m-2" type="password" placeholder='Password (password)' value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button className="bg-blue-500 text-white p-2 m-2" type='submit'>Login</button>
                 </form>
+                <Link href='/register'>Don't have an account? Register</Link>
             </div>
         </div>
     )

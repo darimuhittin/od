@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,40 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-50 min-h-screen flex flex-col`}
       >
-        {children}
+        <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
+          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div className="flex gap-8 items-center">
+              <Link href="/" className="font-bold text-xl tracking-tight text-slate-900 flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-mono text-sm">
+                  OP
+                </div>
+                <span>Operations</span>
+              </Link>
+
+              <nav className="hidden md:flex gap-6">
+                <Link href="/" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
+                  Home
+                </Link>
+                <Link href="/operations" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
+                  History
+                </Link>
+              </nav>
+            </div>
+
+            <div className="flex items-center gap-4">
+              {/* Placeholder for potential auth buttons or standard actions */}
+              <button className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
+                Help
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <main className="flex-1 container mx-auto px-4 py-8">
+          {children}
+        </main>
       </body>
     </html>
   );

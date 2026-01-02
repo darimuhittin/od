@@ -19,3 +19,12 @@ model User {
   name  String
   password String
 }
+
+model Operations {
+  id String @id @default(uuid())
+  name String
+  operator String
+  first String
+  second String
+  result String
+}
