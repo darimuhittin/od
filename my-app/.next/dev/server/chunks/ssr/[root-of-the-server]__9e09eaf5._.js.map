@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/lenovo/Desktop/Project/od/my-app/app/2/page.tsx"],"sourcesContent":["import React from 'react'\r\n\r\n\r\nconst topla = (a: number, b: number) => {\r\n    return a + b\r\n}\r\n\r\nconst topla2 = (a: number, b: number) => a + b\r\n\r\n\r\nconst page = () => {\r\n    return (\r\n        <>\r\n            <div>\r\n\r\n                <div>Merhaba 2. bolum</div>\r\n                <p>{topla(1, 2)}</p>\r\n                <p>{topla2(1, 2)}</p>\r\n\r\n            </div>\r\n        </>\r\n    )\r\n}\r\n\r\nexport default page"],"names":[],"mappings":";;;;;;AAGA,MAAM,QAAQ,CAAC,GAAW;IACtB,OAAO,IAAI;AACf;AAEA,MAAM,SAAS,CAAC,GAAW,IAAc,IAAI;AAG7C,MAAM,OAAO;IACT,qBACI;kBACI,cAAA,8OAAC;;8BAEG,8OAAC;8BAAI;;;;;;8BACL,8OAAC;8BAAG,MAAM,GAAG;;;;;;8BACb,8OAAC;8BAAG,OAAO,GAAG;;;;;;;;;;;;;AAK9B;uCAEe"}}]
+}

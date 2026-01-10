@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/lenovo/Desktop/Project/od/my-app/app/2/layout.tsx"],"sourcesContent":["import React from 'react'\r\n\r\ninterface Props {\r\n    children: React.ReactNode\r\n}\r\n\r\nconst layout = ({ children }: Props) => {\r\n    return (\r\n        <>\r\n            <header>Header</header>\r\n            {children}\r\n            <footer>Footer</footer>\r\n        </>\r\n    )\r\n}\r\n\r\nexport default layout"],"names":[],"mappings":";;;;;;AAMA,MAAM,SAAS,CAAC,EAAE,QAAQ,EAAS;IAC/B,qBACI;;0BACI,8OAAC;0BAAO;;;;;;YACP;0BACD,8OAAC;0BAAO;;;;;;;;AAGpB;uCAEe"}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/lenovo/Desktop/Project/od/my-app/app/page.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nconst AnaSayfa = () => {\r\n  return (\r\n    <div>Merhaba Next.js</div>\r\n  )\r\n}\r\n\r\nexport default AnaSayfa"],"names":[],"mappings":";;;;;;AAEA,MAAM,WAAW;IACf,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe"}}]
+}

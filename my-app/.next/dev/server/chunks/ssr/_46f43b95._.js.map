@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/lenovo/Desktop/Project/od/my-app/app/1/page.tsx"],"sourcesContent":["'use client'\r\n\r\nimport React, { useState } from 'react'\r\n\r\n\r\nconst Ders1 = () => {\r\n\r\n\r\n    console.log(\"rerendered\")\r\n    return (\r\n        <div>\r\n\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default Ders1"],"names":[],"mappings":";;;;;AAAA;;AAKA,MAAM,QAAQ;IAGV,QAAQ,GAAG,CAAC;IACZ,qBACI,8OAAC;;;;;AAIT;uCAEe"}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/lenovo/Desktop/Project/od/my-app/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-ssr']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}
